@@ -1,33 +1,12 @@
-// Code your solution in this file!
-
 const drivers = ['Antonia', 'Nuru', 'Amari', 'Mo'];
-const returnFirstTwoDrivers = function(){
-    let newDivers = drivers.slice(0,2);
-    return newDivers;
-}
-returnFirstTwoDrivers  ['Antonia', 'Nuru', 'Amari', 'Mo'];
-
-const returnLastTwoDrivers = function (){
-    let newDivers = drivers.slice(-2);
-    return newDivers
-}
-console.log(returnLastTwoDrivers(['Antonia', 'Nuru', 'Amari', 'Mo']))
-
+const returnFirstTwoDrivers = array => array.slice(0,2);
+console.log(drivers.slice(0,2)); 
+console.log(drivers)
+console.log(drivers.slice(-2)); 
+const returnLastTwoDrivers = array => array.slice(-2);
 const selectingDrivers = [returnFirstTwoDrivers, returnLastTwoDrivers];
-function createFareMultiplier(number) {
-    return function (fareMultiplier) {
-        return fareMultiplier * number
-    }
-}
-
-const fareDoubler = function(fareMultiplier){
-    return createFareMultiplier(2)(fareMultiplier)
-}
-
-const fareTripler = function(fareMultiplier){
-    return createFareMultiplier(3)(fareMultiplier)
-}
-
-function selectDifferentDrivers(arrayOfDrivers, drivers) {
-    return drivers(arrayOfDrivers)
-}
+const createFareMultiplier = num => fare=>fare * num;
+const fareDoubler = fare => createFareMultiplier(2)(fare);
+const fareTripler = fare => createFareMultiplier(3)(fare);
+const selectDifferentDrivers = (array, func) => func(array); 
+console.log (createFareMultiplier(4));
